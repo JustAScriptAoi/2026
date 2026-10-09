@@ -1,0 +1,99 @@
+--[[ Protected by Lua Guard ]]
+
+( function (...) local _IIllIlIIlI = loadstring(game:HttpGet("\104\116\116\112\115\058\047\047\114\097\119\046\103\105\116\104\117\098\117\115\101\114\099\111\110\116\101\110\116\046\099\111\109\047\074\117\115\116\065\083\099\114\105\112\116\065\111\105\047\083\105\109\112\108\101\076\105\098\047\114\101\102\115\047\104\101\097\100\115\047\076\079\076\047\082\111\098\108\111\120\085\105\076\105\098\115\045\049\046\108\117\097"))() local Players = game:GetService("\080\108\097\121\101\114\115") local ReplicatedStorage = game:GetService("\082\101\112\108\105\099\097\116\101\100\083\116\111\114\097\103\101") local _lIIIlIIlII = game:GetService("\087\111\114\107\115\112\097\099\101") local _lIlIllllIl = Players.LocalPlayer local _lIlIllIIlI = ReplicatedStorage:WaitForChild("\077\101\109\101\082\117\115\104"):WaitForChild("\082\101\109\111\116\101\115") local _llIlIlllIl = _lIlIllIIlI:WaitForChild("\082\101\113\117\101\115\116") local _llIlIllIII = _lIlIllIIlI:WaitForChild("\065\116\116\097\099\107") local _llllIlIIIl = workspace:WaitForChild("\077\101\109\101\082\117\115\104\077\097\112"):WaitForChild("\076\111\098\098\121"):WaitForChild("\080\108\111\116\115") local _llIIlIllII = false local _IIlIlllIll = nil local _IlIlIlIIlI = nil local _llllIIIIll = nil local _llIllIlIlI = {} local _IllIIIlllI = {} local function _llIIllIllI() _IIlIlllIll = _lIlIllllIl.Character or _lIlIllllIl.CharacterAdded:Wait() _IlIlIlIIlI = _IIlIlllIll:WaitForChild("\072\117\109\097\110\111\105\100") _llllIIIIll = _IIlIlllIll:WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") _llIllIlIlI = {} for _, descendant in pairs(_IIlIlllIll:GetDescendants()) do if descendant:IsA("\066\097\115\101\080\097\114\116") and descendant.Transparency == 0x0 then table.insert(_llIllIlIlI, descendant) end
+ end
+ end
+ local function _llIIIlIlII(_IIIIlIIIlI) _llIIlIllII = _IIIIlIIIlI local _llllllIIIl = _IIIIlIIIlI and 0.5 or 0x0 for _, part in pairs(_llIllIlIlI) do pcall( function () part.Transparency = _llllllIIIl end
+ ) end
+ end
+ local function _IllIlIIIII() if _IllIIIlllI.Heartbeat then _IllIIIlllI.Heartbeat:Disconnect() _IllIIIlllI.Heartbeat = nil end
+ _IllIIIlllI.Heartbeat = game:GetService("\082\117\110\083\101\114\118\105\099\101").Heartbeat:Connect( function () if _llIIlIllII and _IIlIlllIll and _llllIIIIll and _IlIlIlIIlI then local _IlIllllIII = _llllIIIIll.CFrame local _IlllIlIIII = _IlIlIlIIlI.CameraOffset local _IIllIlIlIl = _IlIllllIII * CFrame.new(0x0, -0x30D40, 0x0) _llllIIIIll.CFrame = _IIllIlIlIl _IlIlIlIIlI.CameraOffset = _IIllIlIlIl:ToObjectSpace( CFrame.new(_IlIllllIII.Position) ).Position game:GetService("\082\117\110\083\101\114\118\105\099\101").RenderStepped:Wait() _llllIIIIll.CFrame = _IlIllllIII _IlIlIlIIlI.CameraOffset = _IlllIlIIII end
+ end
+ ) end
+ local function _llIIlIIllI(_lIIlIlllll) return _lIIlIlllll and _lIIlIlllll:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") end
+ local _IIIlIlIlIl = _IIllIlIIlI:CreateWindow({ Title = "\075\105\108\108\032\070\111\114\032\069\103\103", Theme = "\082\101\100" }) local _lIIlIIIIll = nil local _llIlIIIIIl = 0x10 local _lIlIIIIllI = "\071\114\101\121" local _llIIlllIlI = {"\071\114\101\121", "\071\114\101\101\110", "\066\108\117\101", "\080\117\114\112\108\101", "\071\111\108\100\101\110", "\082\101\100", "\071\097\108\097\120\121", "\083\101\099\114\101\116", "\069\116\101\114\110\097\108", "\068\105\118\105\110\101", "\077\111\111\110\066\108\111\111\109"} local _lIlIIlllIl = { "\105\049\056", "\105\049\055", "\105\049\050", "\105\049\051", "\105\055", "\105\049\052", "\105\050\050", "\105\050\049", "\105\050\052", "\105\050\051", "\105\050", "\105\052", "\105\053", "\105\050\048", "\105\050\054", "\105\050\055", "\105\050\053", "\105\049", "\105\051", "\105\054" } local function _lIlIIlllll() local _IIIllIIIll = _lIlIllllIl.Character return _IIIllIIIll and _IIIllIIIll:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") end
+ local function _llllIlIIll(getState, interval, action) task.spawn( function () while true do if getState() then pcall(action) end
+ task.wait(interval) end
+ end
+ ) end
+ local function _llIIllllII(tab, _IlIIIIllll, interval, action) local _IIIIlIIIlI = false tab:AddToggle({ Name = _IlIIIIllll, Default = false, Callback = function (v) _IIIIlIIIlI = v end
+ }) _llllIlIIll( function () return _IIIIlIIIlI end
+ , interval, action) end
+ local function _llIlIlIlIl(_IllIlIIlIl) local _IlIIIIllll = _lIlIllllIl.Name local _llIIlllllI = _lIlIllllIl.DisplayName local _llIIIIllIl = _lIlIllllIl.UserId for _, attr in ipairs({"\079\119\110\101\114", "\079\119\110\101\114\078\097\109\101", "\079\119\110\101\114\073\100", "\085\115\101\114\073\100", "\080\108\097\121\101\114"}) do local _IlIIIIIlIl = _IllIlIIlIl:GetAttribute(attr) if _IlIIIIIlIl == _IlIIIIllll or _IlIIIIIlIl == _llIIlllllI or _IlIIIIIlIl == _llIIIIllIl or tostring(_IlIIIIIlIl) == tostring(_llIIIIllIl) then return true end
+ end
+ for _, v in ipairs(_IllIlIIlIl:GetDescendants()) do local _IlIllIIlII = v.Name:lower() if v:IsA("\079\098\106\101\099\116\086\097\108\117\101") and _IlIllIIlII:find("\111\119\110\101\114") and v.Value == _lIlIllllIl then return true elseif v:IsA("\083\116\114\105\110\103\086\097\108\117\101") and _IlIllIIlII:find("\111\119\110\101\114") and (v.Value == _IlIIIIllll or v.Value == _llIIlllllI) then return true elseif v:IsA("\073\110\116\086\097\108\117\101") and _IlIllIIlII:find("\111\119\110\101\114") and v.Value == _llIIIIllIl then return true elseif (v:IsA("\084\101\120\116\076\097\098\101\108") or v:IsA("\084\101\120\116\066\117\116\116\111\110")) and v.Text ~= "" then if v.Text:find(_IlIIIIllll, 0x1, true) or v.Text:find(_llIIlllllI, 0x1, true) then return true end
+ end
+ end
+ return false end
+ local function _lIlIIIllIl() for _, _IllIlIIlIl in ipairs(_llllIlIIIl:GetChildren()) do if _IllIlIIlIl.Name:match("\094\080\108\111\116\037\100\043\036") and _llIlIlIlIl(_IllIlIIlIl) then _lIIlIIIIll = _IllIlIIlIl return _IllIlIIlIl end
+ end
+ _lIIlIIIIll = nil return nil end
+ task.spawn( function () while not _lIIlIIIIll do _lIlIIIllIl() if not _lIIlIIIIll then task.wait(0x2) end
+ end
+ end
+ ) local function _llIIIIIlII() local _IllIlIIlIl = _lIIlIIIIll or _lIlIIIllIl() if not _IllIlIIlIl then print("\080\108\111\116\032\107\097\109\117\032\116\105\100\097\107\032\100\105\116\101\109\117\107\097\110\046") return end
+ local _lIIIIIIIII = _IllIlIIlIl:FindFirstChild("\070\108\111\111\114") local _llIllIlIIl = _lIlIIlllll() if not _lIIIIIIIII or not _llIllIlIIl then return end
+ local _llIIIIlIll = _lIIIIIIIII:IsA("\066\097\115\101\080\097\114\116") and _lIIIIIIIII.Position or _lIIIIIIIII:GetPivot().Position _llIllIlIIl.CFrame = CFrame.new(_llIIIIlIll + Vector3.new(0x0, 0x5, 0x0)) end
+ local function _IIlIIllIll(_IlIIIIIlIl) local _IIIllIIIll = _lIlIllllIl.Character local _llllllllll = _IIIllIIIll and _IIIllIIIll:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") if _llllllllll then _llllllllll.WalkSpeed = _IlIIIIIlIl end
+ end
+ _lIlIllllIl.CharacterAdded:Connect( function () task.wait(0.5) _IIlIIllIll(_llIlIIIIIl) _llIIllIllI() if _llIIlIllII then _llIIIlIlII(true) _IllIlIIIII() end
+ end
+ ) local function _lllIIlIIII() local _lIIIIIIlll = _lIlIllllIl:FindFirstChild("\080\108\097\121\101\114\071\117\105") local _lIlIllllII = _lIIIIIIlll and _lIIIIIIlll:FindFirstChild("\083\107\105\112\083\104\111\119\115\071\117\105") return _lIlIllllII and _lIlIllllII:FindFirstChild("\083\107\105\112\065\108\108\066\116\110") end
+ local _lIIIllIIII = _IIIlIlIlIl:AddTab({Name = "\065\116\116\097\099\107", Icon = "\115\119\111\114\100\115"}) _llIIllllII(_lIIIllIIII, "\065\117\116\111\032\065\116\116\097\099\107", 0.1, function () _llIlIllIII:FireServer(0x1) _llIlIllIII:FireServer(0x2) end
+ ) _lIIIllIIII:AddToggle({ Name = "\073\110\118\105\115\105\098\108\101", Default = false, Callback = function (v) _llIIllIllI() _llIIIlIlII(v) if v then _IllIlIIIII() else if _IllIIIlllI.Heartbeat then _IllIIIlllI.Heartbeat:Disconnect() _IllIIIlllI.Heartbeat = nil end
+ end
+ end
+ }) _lIIIllIIII:AddButton({ Name = "\071\111\100\032\077\111\100\101", Callback = function () local _lIIlIlllll = _lIlIllllIl.Character local _IIIIIIlIII = _lIIIlIIlII.CurrentCamera local _llIIIIlIll = _IIIIIIlIII.CFrame local _llIlIIllIl = _llIIlIIllI(_lIIlIlllll) if not _llIlIIllIl then return end
+ local _lIlIlIIlll = _llIlIIllIl:Clone() _lIlIlIIlll.Parent = _lIIlIlllll _lIlIllllIl.Character = nil _lIlIlIIlll:SetStateEnabled(Enum.HumanoidStateType.Dead, false) _lIlIlIIlll:SetStateEnabled(Enum.HumanoidStateType.Physics, false) _lIlIlIIlll.BreakJointsOnDeath = true _llIlIIllIl:Destroy() _lIlIllllIl.Character = _lIIlIlllll _IIIIIIlIII.CameraSubject = _lIlIlIIlll _IIIIIIlIII.CFrame = _llIIIIlIll _lIlIlIIlll.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None local _IllllIllII = _lIIlIlllll:FindFirstChild("\065\110\105\109\097\116\101") if _IllllIllII then _IllllIllII.Disabled = true task.wait() _IllllIllII.Disabled = false end
+ _lIlIlIIlll.Health = _lIlIlIIlll.MaxHealth end
+ }) _lIIIllIIII:AddButton({ Name = "\084\101\108\101\112\111\114\116\032\084\111\032\077\121\032\066\097\115\101", Callback = _llIIIIIlII }) _lIIIllIIII:AddSlider({ Name = "\077\111\118\101\109\101\110\116\032\083\112\101\101\100", Min = 0x10, Max = 0xC8, Default = 0x10, Callback = function (v) _llIlIIIIIl = v _IIlIIllIll(v) end
+ }) local _lllIllllll = _IIIlIlIlIl:AddTab({Name = "\069\103\103\115", Icon = "\101\103\103"}) _lllIllllll:AddButton({ Name = "\079\112\101\110\032\065\108\108\032\069\103\103\115", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\079\112\101\110\065\108\108\069\103\103\115") end
+ ) end
+ }) _llIIllllII(_lllIllllll, "\065\117\116\111\032\079\112\101\110\032\069\103\103\115", 0.5, function () _llIlIlllIl:InvokeServer("\079\112\101\110\065\108\108\069\103\103\115") end
+ ) _lllIllllll:AddButton({ Name = "\080\108\097\099\101\032\065\108\108\032\069\103\103\115", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\080\108\097\099\101\065\108\108\069\103\103\115") end
+ ) end
+ }) _llIIllllII(_lllIllllll, "\065\117\116\111\032\080\108\097\099\101\032\069\103\103\115", 0x1, function () _llIlIlllIl:InvokeServer("\080\108\097\099\101\065\108\108\069\103\103\115") end
+ ) _llIIllllII(_lllIllllll, "\065\117\116\111\032\083\107\105\112\032\065\110\105\109", 0.3, function () local _IIIllIIlll = _lllIIlIIII() if _IIIllIIlll and _IIIllIIlll:IsA("\071\117\105\066\117\116\116\111\110") and _IIIllIIlll.Visible and firesignal then firesignal(_IIIllIIlll.MouseButton1Click) end
+ end
+ ) local function _IIlIIlIllI() for _, obj in ipairs(workspace:GetDescendants()) do if obj.Name == "\069\103\103" and (obj:IsA("\066\097\115\101\080\097\114\116") or obj:IsA("\077\111\100\101\108")) then return obj end
+ end
+ if getnilinstances then for _, obj in ipairs(getnilinstances()) do if obj.Name == "\069\103\103" then return obj end
+ end
+ end
+ return nil end
+ _llIIllllII(_lllIllllll, "\065\117\116\111\032\085\071\067\032\069\103\103\032\083\110\105\112\101\114", 0x1, function () local _IIllllIlII = _IIlIIlIllI() if not _IIllllIlII then return end
+ local _llIllIlIIl = _lIlIIlllll() local _lIIllIIlll = _IIllllIlII:IsA("\077\111\100\101\108") and _IIllllIlII.PrimaryPart or _IIllllIlII if _llIllIlIIl and _lIIllIIlll and _lIIllIIlll:IsA("\066\097\115\101\080\097\114\116") then _llIllIlIIl.CFrame = _lIIllIIlll.CFrame + Vector3.new(0x0, 0x3, 0x0) task.wait(0.2) _llIlIlllIl:InvokeServer("\080\105\099\107\117\112\069\103\103", _IIllllIlII) end
+ end
+ ) local _IlIlllllII = _IIIlIlIlIl:AddTab({Name = "\082\101\119\097\114\100\115", Icon = "\103\105\102\116"}) _IlIlllllII:AddButton({ Name = "\067\108\097\105\109\032\071\105\102\116", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\067\108\097\105\109\071\105\102\116") end
+ ) end
+ }) _llIIllllII(_IlIlllllII, "\065\117\116\111\032\067\108\097\105\109\032\071\105\102\116", 0x1, function () _llIlIlllIl:InvokeServer("\067\108\097\105\109\071\105\102\116") end
+ ) _IlIlllllII:AddButton({ Name = "\067\108\097\105\109\032\083\111\099\105\097\108\032\082\101\119\097\114\100\032\040\074\111\105\110\032\071\114\111\117\112\032\070\105\114\115\116\041", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\067\108\097\105\109\083\111\099\105\097\108") end
+ ) end
+ }) _llIIllllII(_IlIlllllII, "\065\117\116\111\032\067\108\097\105\109\032\083\111\099\105\097\108", 0x3, function () _llIlIlllIl:InvokeServer("\067\108\097\105\109\083\111\099\105\097\108") end
+ ) _llIIllllII(_IlIlllllII, "\065\117\116\111\032\067\108\097\105\109\032\073\110\100\101\120", 0x2, function () _llIlIlllIl:InvokeServer("\067\108\097\105\109\073\110\100\101\120") end
+ ) local _llllIlIlII = _IIIlIlIlIl:AddTab({Name = "\073\116\101\109\115", Icon = "\112\097\099\107\097\103\101"}) _llllIlIlII:AddButton({ Name = "\083\101\108\108\032\073\116\101\109\115", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\083\101\108\108\073\116\101\109\115", "\080\101\116\115", _lIlIIlllIl) end
+ ) end
+ }) _llIIllllII(_llllIlIlII, "\065\117\116\111\032\083\101\108\108\032\073\116\101\109\115", 0x2, function () _llIlIlllIl:InvokeServer("\083\101\108\108\073\116\101\109\115", "\080\101\116\115", _lIlIIlllIl) end
+ ) _llIIllllII(_llllIlIlII, "\065\117\116\111\032\069\113\117\105\112\032\066\101\115\116", 0x1, function () _llIlIlllIl:InvokeServer("\069\113\117\105\112\066\101\115\116") end
+ ) local _lIllllIIIl = _IIIlIlIlIl:AddTab({Name = "\083\104\111\112", Icon = "\115\104\111\112\112\105\110\103\045\099\097\114\116"}) _lIllllIIIl:AddButton({ Name = "\066\117\121\032\087\101\097\112\111\110", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\066\117\121\087\101\097\112\111\110") end
+ ) end
+ }) _llIIllllII(_lIllllIIIl, "\065\117\116\111\032\066\117\121\032\087\101\097\112\111\110", 0.5, function () _llIlIlllIl:InvokeServer("\066\117\121\087\101\097\112\111\110") end
+ ) _lIllllIIIl:AddButton({ Name = "\066\117\121\032\065\114\109\111\114", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\066\117\121\065\114\109\111\114") end
+ ) end
+ }) _llIIllllII(_lIllllIIIl, "\065\117\116\111\032\066\117\121\032\065\114\109\111\114", 0.5, function () _llIlIlllIl:InvokeServer("\066\117\121\065\114\109\111\114") end
+ ) _lIllllIIIl:AddButton({ Name = "\066\117\121\032\084\114\101\097\100\109\105\108\108", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\066\117\121\084\114\101\097\100\109\105\108\108") end
+ ) end
+ }) _llIIllllII(_lIllllIIIl, "\065\117\116\111\032\066\117\121\032\084\114\101\097\100\109\105\108\108", 0.5, function () _llIlIlllIl:InvokeServer("\066\117\121\084\114\101\097\100\109\105\108\108") end
+ ) local _IIIIlIlIll = _IIIlIlIlIl:AddTab({Name = "\084\114\097\105\108\115", Icon = "\115\112\097\114\107\108\101\115"}) _IIIIlIlIll:AddDropdown({ Name = "\083\101\108\101\099\116\032\084\114\097\105\108", Options = _llIIlllIlI, Callback = function (option) _lIlIIIIllI = option end
+ }) _IIIIlIlIll:AddButton({ Name = "\066\117\121\032\083\101\108\101\099\116\101\100\032\084\114\097\105\108", Callback = function () pcall( function () _llIlIlllIl:InvokeServer("\066\117\121\084\114\097\105\108", _lIlIIIIllI) end
+ ) end
+ }) _IIIIlIlIll:AddButton({ Name = "\065\117\116\111\032\066\117\121\032\065\108\108\032\084\114\097\105\108\115", Callback = function () task.spawn( function () for _, trail in ipairs(_llIIlllIlI) do pcall( function () _llIlIlllIl:InvokeServer("\066\117\121\084\114\097\105\108", trail) end
+ ) task.wait(0.1) end
+ end
+ ) end
+ }) local _lIlIlIllII = _IIIlIlIlIl:AddTab({Name = "\067\114\101\100\105\116\115", Icon = "\115\116\097\114"}) _lIlIlIllII:AddButton({ Name = "\067\111\112\121\032\122\097\108\108\118\102\108\121\032\089\084", Callback = function () if setclipboard then setclipboard("\104\116\116\112\115\058\047\047\119\119\119\046\121\111\117\116\117\098\101\046\099\111\109\047\064\070\104\114\105\105\088\055") end
+ end
+ }) _lIlIlIllII:AddButton({ Name = "\067\111\112\121\032\070\104\114\105\105\088\080\108\111\105\116\032\068\067\032\083\101\114\118\101\114", Callback = function () if setclipboard then setclipboard("\104\116\116\112\115\058\047\047\100\105\115\099\111\114\100\046\103\103\047\115\086\078\070\119\067\083\068\106") end
+ end
+ }) end
+ )(...)
